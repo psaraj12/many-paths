@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A bilingual, multi-tradition spiritual companion.">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>Many Paths — Spiritual Companion</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Many Paths home">
+        <span class="brand-mark" aria-hidden="true">◌</span>
+        <span>
+          <strong data-i18n="title">Many Paths</strong>
+          <small data-i18n="subtitle">A spiritual companion</small>
+        </span>
+      </a>
+      <label class="language-control">
+        <span class="sr-only">Language</span>
+        <select id="language" aria-label="Language">
+          <option value="en">English</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+      </label>
+    </header>
+
+    <section class="intro" id="intro">
+      <p class="eyebrow" data-i18n="eyebrow">Wisdom without hierarchy</p>
+      <h1 data-i18n="welcome">Bring the question that is alive in you.</h1>
+      <p data-i18n="intro">Explore Hindu, Buddhist and other major spiritual traditions side by side. No path is presented as superior.</p>
+      <div class="suggestions" aria-label="Suggested questions">
+        <button class="suggestion" data-question-en="What is the self?" data-question-ta="சுயம் என்றால் என்ன?">What is the self?</button>
+        <button class="suggestion" data-question-en="Why do we suffer?" data-question-ta="நாம் ஏன் துன்பப்படுகிறோம்?">Why do we suffer?</button>
+        <button class="suggestion" data-question-en="How can I find inner peace?" data-question-ta="மன அமைதியை எவ்வாறு காண்பது?">How can I find inner peace?</button>
+      </div>
+    </section>
+
+    <section class="chat-panel" aria-label="Conversation">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="question">Your spiritual question</label>
+        <textarea id="question" name="question" rows="1" maxlength="2000" data-i18n-placeholder="placeholder" placeholder="Ask a spiritual question…" required></textarea>
+        <button id="send" class="send" type="submit" aria-label="Send question">
+          <span data-i18n="ask">Ask</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+      <p class="disclaimer" data-i18n="disclaimer">Curated perspectives for reflection—not divine authority, medical advice or crisis support.</p>
+    </section>
+
+    <footer>
+      <button id="clear" class="text-button" type="button" data-i18n="clear">Clear conversation</button>
+      <span>•</span>
+      <span data-i18n="privacy">Everything stays on this device.</span>
+    </footer>
+  </main>
+
+  <script src="knowledge-base.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
