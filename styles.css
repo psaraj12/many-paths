@@ -155,3 +155,151 @@ footer { display: flex; justify-content: center; gap: 8px; margin-top: 15px; col
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; }
 }
+
+/* ---- static topic pages ---------------------------------------------- */
+
+.article { padding-bottom: 56px; }
+.article .topbar { margin-bottom: 40px; }
+
+.lang-switch {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 15px;
+  background: var(--surface);
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+.lang-switch:hover { color: var(--accent); border-color: var(--accent); }
+
+.article article {
+  max-width: 68ch;
+  margin: 0 auto;
+}
+
+.article h1 {
+  font-size: clamp(30px, 4.4vw, 44px);
+  line-height: 1.16;
+  margin: 0 0 18px;
+  text-align: left;
+}
+
+.article h2 {
+  font-family: Georgia, "Noto Serif Tamil", serif;
+  font-size: 21px;
+  font-weight: 500;
+  margin: 42px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--accent-dark);
+}
+
+.article p { line-height: 1.72; margin: 0 0 16px; }
+
+.article .lede {
+  font-size: 19px;
+  line-height: 1.68;
+  color: var(--ink);
+}
+
+.alt-questions {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.alt-questions span { color: var(--accent); }
+
+.tradition {
+  margin: 0 0 22px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line);
+}
+.tradition p { margin: 0; color: #3b3831; }
+
+.article blockquote {
+  margin: 0;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: Georgia, "Noto Serif Tamil", serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--sage);
+}
+
+.sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--muted);
+}
+.sources li { padding: 5px 0; border-bottom: 1px dotted var(--line); }
+
+.cta-line { margin: 40px 0 0; }
+.cta {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fdfbf6;
+  text-decoration: none;
+  font-size: 15px;
+}
+.cta:hover { background: var(--accent-dark); }
+
+.related ul, .topic-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.related li { padding: 4px 0; }
+.related a { color: var(--accent-dark); }
+
+.topic-list { display: grid; gap: 10px; margin-top: 28px; }
+.topic-list a {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+}
+.topic-list a:hover { border-color: var(--accent); }
+.topic-list strong {
+  display: block;
+  font-family: Georgia, "Noto Serif Tamil", serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.topic-list span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+.article-footer {
+  max-width: 68ch;
+  margin: 48px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+/* homepage link into the written pages */
+.browse {
+  max-width: 730px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.browse a { color: var(--accent-dark); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

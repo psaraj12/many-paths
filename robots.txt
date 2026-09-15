@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psaraj12.github.io/many-paths/sitemap.xml
