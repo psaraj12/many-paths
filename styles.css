@@ -127,6 +127,20 @@ h1 { margin: 0; font-family: Georgia, "Noto Serif Tamil", serif; font-size: clam
 }
 .send:hover { background: var(--accent-dark); }
 .send:disabled { opacity: .55; cursor: wait; }
+.composer-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 20px 14px;
+}
+.composer-meta .disclaimer { flex: 1; padding: 0; text-align: left; }
+.composer-meta #clear { flex: none; font-size: 11px; white-space: nowrap; }
+.composer-meta #clear:hover { color: var(--accent); }
+
+/* nothing to clear yet -> keep the control out of the way */
+#messages:not(.has-messages) ~ .composer-meta #clear { display: none; }
+
 .disclaimer { margin: 0; padding: 0 20px 15px; color: var(--muted); font-size: 11px; line-height: 1.45; text-align: center; }
 .notice { padding: 10px 18px; color: #7b3427; background: #f8e6e0; font-size: 13px; text-align: center; }
 
@@ -148,6 +162,7 @@ footer { display: flex; justify-content: center; gap: 8px; margin-top: 15px; col
   .messages { max-height: 48vh; padding: 16px; }
   .message { max-width: 91%; }
   .composer { gap: 6px; padding: 9px; }
+  .composer-meta { flex-direction: column; align-items: flex-start; gap: 8px; padding: 0 14px 12px; }
   .send { min-width: 72px; }
   footer { align-items: center; flex-wrap: wrap; }
 }

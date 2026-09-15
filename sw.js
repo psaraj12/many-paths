@@ -1,4 +1,4 @@
-const CACHE = "many-paths-v2";
+const CACHE = "many-paths-v3";
 const ASSETS = ["./", "./index.html", "./styles.css", "./knowledge-base.js", "./app.js", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS))));

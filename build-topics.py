@@ -218,6 +218,25 @@ def index_page(kb, lang):
                       alternate=alternate, body=body)
 
 
+def bump_service_worker():
+    """Increment the sw.js cache version so returning visitors get new files."""
+    path = os.path.join(ROOT, "sw.js")
+    if not os.path.exists(path):
+        return None
+    src = open(path, encoding="utf-8").read()
+    m = re.search(r'(CACHE\s*=\s*["\'])([^"\']+)(["\'])', src)
+    if not m:
+        print("  sw.js: no CACHE constant found, skipped")
+        return None
+    old = m.group(2)
+    if re.search(r"(\d+)$", old):
+        new = re.sub(r"(\d+)$", lambda x: str(int(x.group(1)) + 1), old)
+    else:
+        new = old + "-2"
+    open(path, "w", encoding="utf-8").write(src.replace(m.group(0), m.group(1) + new + m.group(3)))
+    return old, new
+
+
 def main():
     kb = load_kb()
     out = os.path.join(ROOT, "topics")
@@ -261,6 +280,10 @@ def main():
 
     print(f"{len(urls)} pages written to topics/")
     print("sitemap.xml and robots.txt written")
+
+    bumped = bump_service_worker()
+    if bumped:
+        print(f"sw.js cache: {bumped[0]} -> {bumped[1]}")
 
 
 if __name__ == "__main__":
